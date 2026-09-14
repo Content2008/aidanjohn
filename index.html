@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>APYOLAY.COM</title>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Adsterra Popunder Code -->
+    <script src="https://pl31171672.profitableratecpmnetwork.com/b1/3e/90/b13e907cd9bf7dbaf46918ace3dc15b2.js"></script>
+
+    <style>
+        /* 1XBET PREMIUM PALETTE */
+        :root {
+            --bg-base: #0A141D;
+            --bg-card: #12212E;
+            --bg-surface: #1B2E3E;
+            --bg-dock: rgba(10, 20, 29, 0.96);
+            
+            --brand-yellow: #FFB800;
+            --brand-cyan: #0088CC;
+            --brand-accent: #00A3FF;
+            
+            --text-main: #FFFFFF;
+            --text-muted: #8FA2B3;
+            --border-fine: rgba(255, 255, 255, 0.08);
+            
+            --shadow-lux: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --font-luxury: 'Montserrat', sans-serif;
+        } 
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-luxury);
+            -webkit-tap-highlight-color: transparent;
+        } 
+
+        body {
+            background-color: #050A0F;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        } 
+
+        .app-shell {
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 110px;
+            overflow-x: hidden;
+            background-color: var(--bg-base);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            border-left: 1px solid var(--border-fine);
+            border-right: 1px solid var(--border-fine);
+        } 
+
+        .view-panel { 
+            display: none; 
+            width: 100%;
+            animation: luxFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .view-panel.active { 
+            display: block;
+        } 
+
+        @keyframes luxFadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HEADER & SEARCH */
+        .header-lux {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 20, 29, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 14px 16px 10px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-fine);
+        }
+
+        .top-row-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-box span {
+            color: var(--brand-yellow);
+            font-weight: 900;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(255, 184, 0, 0.3);
+        }
+
+        .live-dot-badge {
+            padding: 4px 10px;
+            background: rgba(0, 163, 255, 0.15);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(0, 163, 255, 0.3);
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: var(--brand-cyan);
+        }
+
+        .live-dot-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--brand-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--brand-cyan);
+        }
+
+        .search-lux-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-lux-box input {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-fine);
+            border-radius: 10px;
+            padding: 10px 16px 10px 40px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-lux-box input:focus {
+            border-color: var(--brand-yellow);
+            box-shadow: 0 0 15px rgba(255, 184, 0, 0.2);
+        }
+
+        .search-icon-lux {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* HERO CAROUSEL */
+        .hero-banner-section {
+            padding: 14px 16px 4px 16px;
+        }
+
+        .banner-carousel-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 16/9;
+            box-shadow: var(--shadow-lux);
+            border: 1px solid var(--border-fine);
+        }
+
+        .banner-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .banner-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+            background: var(--bg-card);
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(10,20,29,0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 12px 14px;
+        }
+
+        .banner-tag {
+            background: var(--brand-yellow);
+            color: #000;
+            font-size: 0.6rem;
+            font-weight: 900;
+            padding: 2px 8px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .banner-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #FFF;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+
+        .dot-item {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dot-item.active {
+            width: 16px;
+            border-radius: 10px;
+            background: var(--brand-yellow);
+        }
+
+        /* CATEGORY PILLS */
+        .pill-carousel-lux {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 12px 16px;
+        }
+        .pill-carousel-lux::-webkit-scrollbar { display: none; }
+
+        .pill-lux {
+            padding: 8px 18px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-fine);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .pill-lux.active {
+            background: var(--brand-yellow);
+            color: #000000;
+            border-color: transparent;
+        }
+
+        /* 2-COLUMN GRID */
+        .stream-grid-layout {
+            padding: 0 14px 14px 14px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .lux-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-fine);
+            box-shadow: var(--shadow-lux);
+            transition: transform 0.25s ease;
+        }
+
+        .lux-card:active {
+            transform: scale(0.97);
+        }
+
+        .lux-media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--bg-surface);
+        }
+
+        .lux-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .duration-lux-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(10, 20, 29, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--brand-yellow);
+        }
+
+        .fav-lux-trigger {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 28px;
+            height: 28px;
+            background: rgba(10, 20, 29, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #FFFFFF;
+            border: 1px solid var(--border-fine);
+        }
+
+        .fav-lux-trigger.active {
+            color: var(--brand-yellow);
+        }
+
+        .share-lux-trigger {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            height: 26px;
+            padding: 0 8px;
+            background: rgba(10, 20, 29, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            border: 1px solid var(--border-fine);
+        }
+
+        .lux-details {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .lux-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* PLAYER VIEW */
+        .player-nav-lux {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-fine);
+        }
+
+        .btn-lux-back {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-fine);
+            color: var(--brand-yellow);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .viewport-lux {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000000;
+            position: relative;
+        }
+
+        .viewport-lux iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .shield-lux {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            z-index: 10;
+        }
+
+        .title-lux-viewport {
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--text-main);
+            background: var(--bg-card);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-fine);
+        }
+
+        .btn-share-player {
+            align-self: flex-start;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-fine);
+            color: var(--brand-yellow);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .label-lux-section {
+            padding: 18px 16px 10px 16px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 0.3px;
+        }
+
+        /* PROMOTIONAL ADS SECTION */
+        .promo-lux-card {
+            margin: 14px 16px;
+            padding: 18px;
+            background: linear-gradient(145deg, #12212E, #1B2E3E);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--brand-yellow);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .promo-header {
+            color: var(--brand-yellow);
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .promo-desc {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .promo-actions-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-promo-action {
+            width: 100%;
+            max-width: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--brand-yellow);
+            color: #000000;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.8rem;
+            transition: opacity 0.2s;
+        }
+
+        /* DOCK NAV */
+        .floating-dock {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 398px;
+            background: var(--bg-dock);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-fine);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 999;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+
+        .dock-item-lux {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .dock-item-lux.active {
+            color: var(--brand-yellow);
+        }
+
+        .dock-icon-lux {
+            font-size: 1rem;
+        }
+
+        /* MODALS & LOADERS */
+        .glass-gate-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 10, 15, 0.92);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .lux-gate-card {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 320px;
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+            border: 1px solid var(--border-fine);
+        }
+
+        .gate-lux-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--brand-yellow);
+            margin-bottom: 8px;
+        }
+
+        .gate-lux-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn-gate-lux-confirm {
+            background: var(--brand-yellow);
+            color: #000000;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .lux-state-msg {
+            grid-column: span 2;
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+        
+        .lux-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border-fine);
+            border-top: 2px solid var(--brand-yellow);
+            border-radius: 50%;
+            animation: luxRotation 0.75s linear infinite;
+            margin: 0 auto 10px auto;
+        }
+        @keyframes luxRotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .lux-toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: var(--brand-yellow);
+            color: #000000;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(255, 184, 0, 0.4);
+            z-index: 10000;
+            transition: transform 0.35s ease;
+        }
+        .lux-toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body> 
+
+<!-- Toast Notification -->
+<div class="lux-toast" id="toastBox">Link copied to clipboard!</div>
+
+<!-- 18+ Verification Modal -->
+<div class="glass-gate-screen" id="gateModal">
+    <div class="lux-gate-card">
+        <div class="gate-lux-title">AGE VERIFICATION</div>
+        <div class="gate-lux-desc">
+            Welcome to APYOLAY.COM. This platform contains adult material intended for individuals aged 18 and older.
+        </div>
+        <button class="btn-gate-lux-confirm" onclick="document.getElementById('gateModal').style.display='none'">AGREE & ENTER (18+)</button>
+    </div>
+</div> 
+
+<!-- Interstitial Ad Screen -->
+<div class="glass-gate-screen" id="adPortalModal" style="display: none;">
+    <div class="lux-gate-card" style="padding: 0; overflow: hidden; max-width: 360px;">
+        <iframe id="interstitialFrame" src="" style="width: 100%; aspect-ratio: 4/3; border: none;"></iframe>
+        <div style="background: var(--bg-card); padding: 12px; color: var(--brand-yellow); font-weight: 700; font-size: 0.8rem; border-top: 1px solid var(--border-fine);" id="timerCountdown">
+            Verifying secure link in 10s...
+        </div>
+    </div>
+</div>
+
+<div class="app-shell"> 
+
+    <!-- PANEL: HOME -->
+    <div id="panelHome" class="view-panel active">
+        <div class="header-lux">
+            <div class="top-row-bar">
+                <div class="logo-box">
+                    <span>APYOLAY.COM</span>
+                </div>
+                <div class="live-dot-badge">LIVE</div>
+            </div>
+            
+            <div class="search-lux-box">
+                <i class="fa-solid fa-magnifying-glass search-icon-lux"></i>
+                <input type="text" id="queryInput" placeholder="Search videos...">
+            </div>
+        </div>
+
+        <!-- Dynamic Hero Banner Carousel -->
+        <div class="hero-banner-section">
+            <div class="banner-carousel-container">
+                <div class="banner-track" id="heroBannerTrack">
+                    <!-- Dynamic Slides -->
+                </div>
+                <div class="carousel-dots" id="bannerDotsContainer"></div>
+            </div>
+        </div>
+
+        <div class="pill-carousel-lux">
+            <div class="pill-lux active" onclick="filterQuery('asian', this)">All</div>
+            <div class="pill-lux" onclick="filterQuery('japanese', this)">Japan</div>
+            <div class="pill-lux" onclick="filterQuery('myanmar', this)">Myanmar</div>
+            <div class="pill-lux" onclick="filterQuery('korean', this)">Korea</div>
+            <div class="pill-lux" onclick="filterQuery('other', this)">Other</div>
+        </div>
+
+        <div class="stream-grid-layout" id="homeStream">
+            <!-- Dynamic Grid -->
+        </div>
+    </div>
+
+    <!-- PANEL: PLAYER -->
+    <div id="panelPlayer" class="view-panel">
+        <div class="player-nav-lux">
+            <div class="btn-lux-back" onclick="navigateView('home')">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div style="font-weight: 800; color: var(--text-main); font-size: 0.85rem; letter-spacing: 0.5px;">APYOLAY.COM</div>
+        </div>
+
+        <div class="viewport-lux">
+            <div class="shield-lux"></div>
+            <div id="videoEmbedContainer"></div>
+        </div>
+
+        <div class="title-lux-viewport">
+            <div id="videoActiveTitle">Loading title details...</div>
+            <button class="btn-share-player" id="playerShareBtn">
+                <i class="fa-solid fa-link"></i>
+                <span>Copy Video Link</span>
+            </button>
+        </div>
+
+        <!-- PROMOTIONAL ADVERTISING SECTION -->
+        <div class="promo-lux-card">
+            <div class="promo-header">Slot | 2D3D | Casino | Fishing & Business Ads</div>
+            <div class="promo-desc">
+                For advertising inquiries and promotions, please contact us via Telegram below.
+            </div>
+            <div class="promo-actions-group">
+                <a href="https://t.me/AidanJohn" target="_blank" class="btn-promo-action">
+                    <i class="fa-paper-plane"></i>
+                    <span>CONTACT TELEGRAM</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="label-lux-section">Recommended Videos</div>
+        <div class="stream-grid-layout" id="recommendStream"></div>
+    </div>
+
+    <!-- PANEL: BOOKMARKS -->
+    <div id="panelFavs" class="view-panel">
+        <div class="header-lux">
+            <div class="top-row-bar">
+                <div class="logo-box">
+                    <span>SAVED COLLECTION</span>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top: 14px;"></div>
+        <div class="stream-grid-layout" id="bookmarksStream"></div>
+    </div>
+
+    <!-- DOCK NAVIGATION -->
+    <div class="floating-dock">
+        <div class="dock-item-lux active" id="dockHome" onclick="navigateView('home')">
+            <i class="fa-solid fa-house dock-icon-lux"></i>
+            <span>Home</span>
+        </div>
+        <div class="dock-item-lux" id="dockFav" onclick="triggerFavSecureTransition()">
+            <i class="fa-solid fa-bookmark dock-icon-lux"></i>
+            <span>Favorites</span>
+        </div>
+    </div>
+
+</div> 
+
+<script>
+    let activeQuery = "asian"; 
+    let idxHome = Math.floor(Math.random() * 5) + 1; 
+    let idxRelated = Math.floor(Math.random() * 5) + 6;
+    let lockScrollFetch = false;
+    let currentPanel = "home"; 
+    let activeVideoId = null;
+
+    let bannerItems = [];
+    let currentBannerIndex = 0;
+    let bannerInterval = null;
+
+    if (!sessionStorage.getItem('processedKeys')) sessionStorage.setItem('processedKeys', JSON.stringify([]));
+    if (!localStorage.getItem('savedCollection')) localStorage.setItem('savedCollection', JSON.stringify([]));
+
+    document.addEventListener("DOMContentLoaded", () => {
+        checkUrlHashForVideo();
+
+        if (!activeVideoId) {
+            executeFetchOperation(activeQuery, idxHome, 'homeStream', false);
+        }
+
+        document.getElementById('queryInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                activeQuery = this.value.trim() || "asian";
+                idxHome = Math.floor(Math.random() * 5) + 1;
+                executeFetchOperation(activeQuery, idxHome, 'homeStream', false);
+                this.blur();
+            }
+        }); 
+
+        window.addEventListener('scroll', () => {
+            if (currentPanel === "favorites") return;
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 700) {
+                if (!lockScrollFetch) {
+                    lockScrollFetch = true; 
+                    if (currentPanel === "home") {
+                        idxHome++;
+                        executeFetchOperation(activeQuery, idxHome, 'homeStream', true);
+                    } else if (currentPanel === "player") {
+                        idxRelated++;
+                        executeFetchOperation(activeQuery, idxRelated, 'recommendStream', true);
+                    }
+                }
+            }
+        });
+    }); 
+
+    function showToast(text) {
+        const toast = document.getElementById('toastBox');
+        toast.innerText = text;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function copyVideoLink(e, videoId) {
+        if(e) e.stopPropagation();
+        const baseDomain = window.location.origin + window.location.pathname;
+        const shareableUrl = `${baseDomain}#video/${videoId}`;
+        
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareableUrl).then(() => {
+                showToast("Link copied to clipboard!");
+            });
+        } else {
+            const input = document.createElement('input');
+            input.value = shareableUrl;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            showToast("Link copied to clipboard!");
+        }
+    }
+
+    async function checkUrlHashForVideo() {
+        const hash = window.location.hash;
+        if (hash.startsWith('#video/')) {
+            const vId = hash.replace('#video/', '');
+            if (vId) {
+                try {
+                    const response = await fetch(`https://www.eporner.com/api/v2/video/id/?id=${vId}`);
+                    const data = await response.json();
+                    if (data && data.embed) {
+                        activateBroadcastStream(data.embed, data.title, data.id);
+                    }
+                } catch(err) {
+                    console.error("Link load error:", err);
+                }
+            }
+        }
+    }
+
+    function navigateView(panelId) {
+        currentPanel = panelId;
+        document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.dock-item-lux').forEach(d => d.classList.remove('active'));
+
+        if (panelId === 'home') {
+            document.getElementById('panelHome').classList.add('active');
+            document.getElementById('dockHome').classList.add('active');
+            document.getElementById('videoEmbedContainer').innerHTML = ""; 
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+        } else if (panelId === 'favorites') {
+            document.getElementById('panelFavs').classList.add('active');
+            document.getElementById('dockFav').classList.add('active');
+            document.getElementById('videoEmbedContainer').innerHTML = ""; 
+            parseSavedData();
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+        } else if (panelId === 'player') {
+            document.getElementById('panelPlayer').classList.add('active');
+        }
+        window.scrollTo(0, 0);
+    }
+
+    function triggerFavSecureTransition() {
+        if (currentPanel === 'favorites') return;
+        
+        const gate = document.getElementById('adPortalModal');
+        const frame = document.getElementById('interstitialFrame');
+        const timer = document.getElementById('timerCountdown');
+        
+        frame.src = "https://www.effectivecpmnetwork.com/hijr7iu8h?key=c27353dcc26627cf41bb987af8865388";
+        gate.style.display = 'flex';
+        
+        let dynamicSec = 10;
+        timer.innerText = `Verifying secure link in ${dynamicSec}s...`;
+
+        const pulse = setInterval(() => {
+            dynamicSec--;
+            if (dynamicSec <= 0) {
+                clearInterval(pulse);
+                gate.style.display = 'none';
+                frame.src = ""; 
+                navigateView('favorites');
+            } else {
+                timer.innerText = `Verifying secure link in ${dynamicSec}s...`;
+            }
+        }, 1000);
+    }
+
+    function filterQuery(queryKeyword, component) {
+        document.querySelectorAll('.pill-lux').forEach(c => c.classList.remove('active'));
+        component.classList.add('active');
+        activeQuery = queryKeyword;
+        idxHome = Math.floor(Math.random() * 5) + 1;
+        executeFetchOperation(activeQuery, idxHome, 'homeStream', false);
+    }
+
+    function toggleCollectionState(e, packet) {
+        e.stopPropagation(); 
+        let store = JSON.parse(localStorage.getItem('savedCollection'));
+        const targetIdx = store.findIndex(item => item.id === packet.id);
+
+        if (targetIdx > -1) {
+            store.splice(targetIdx, 1);
+            e.currentTarget.classList.remove('active');
+            e.currentTarget.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+        } else {
+            store.push(packet);
+            e.currentTarget.classList.add('active');
+            e.currentTarget.innerHTML = '<i class="fa-solid fa-bookmark"></i>';
+        }
+        localStorage.setItem('savedCollection', JSON.stringify(store));
+
+        if (currentPanel === "favorites") parseSavedData();
+    }
+
+    function parseSavedData() {
+        const board = document.getElementById('bookmarksStream');
+        let store = JSON.parse(localStorage.getItem('savedCollection'));
+
+        if (store.length === 0) {
+            board.innerHTML = `<div class="lux-state-msg">No saved videos found.</div>`;
+            return;
+        }
+
+        board.innerHTML = "";
+        store.forEach(vData => {
+            board.appendChild(scaffoldCardNode(vData, true));
+        });
+    }
+
+    async function executeFetchOperation(searchKey, dynamicPage, TargetNodeId, isAppendation) {
+        const stream = document.getElementById(TargetNodeId);
+        
+        if (!isAppendation) {
+            stream.innerHTML = `<div class="lux-state-msg"><div class="lux-spinner"></div>Loading collection...</div>`;
+        }
+
+        try {
+            const apiRequestString = `https://www.eporner.com/api/v2/video/search/?query=${encodeURIComponent(searchKey)}&per_page=16&page=${dynamicPage}&thumbsize=big`;
+            const communicationChannel = await fetch(apiRequestString);
+            const verifiedPayload = await communicationChannel.json(); 
+
+            if (!isAppendation) stream.innerHTML = ""; 
+
+            let processedKeys = JSON.parse(sessionStorage.getItem('processedKeys')); 
+            let store = JSON.parse(localStorage.getItem('savedCollection'));
+            let operationalYieldCount = 0;
+
+            if (verifiedPayload.videos && verifiedPayload.videos.length > 0) {
+                
+                if (!isAppendation && TargetNodeId === 'homeStream') {
+                    setupHeroBannerCarousel(verifiedPayload.videos.slice(0, 5));
+                }
+
+                verifiedPayload.videos.forEach(entity => {
+                    if (!processedKeys.includes(entity.id)) {
+                        processedKeys.push(entity.id); 
+                        operationalYieldCount++; 
+
+                        const simulatedVisits = entity.views || Math.floor(Math.random() * 600) + 50;
+                        const shortFormMetric = simulatedVisits >= 1000 ? (simulatedVisits / 1000).toFixed(1) + 'K' : simulatedVisits; 
+                        const timestampDisplay = `${entity.length_min}:${entity.length_sec < 10 ? '0' + entity.length_sec : entity.length_sec}`;
+                        const matchingState = store.some(savedUnit => savedUnit.id === entity.id);
+
+                        const structuralObject = {
+                            id: entity.id,
+                            title: entity.title.replace(/'/g, "\\'").replace(/"/g, '\\"'),
+                            embed: entity.embed,
+                            thumb: entity.default_thumb.src,
+                            duration: timestampDisplay,
+                            views: shortFormMetric
+                        };
+
+                        stream.appendChild(scaffoldCardNode(structuralObject, matchingState));
+                    }
+                }); 
+
+                sessionStorage.setItem('processedKeys', JSON.stringify(processedKeys)); 
+
+                if (operationalYieldCount === 0) {
+                    lockScrollFetch = false;
+                    let incrementedPageValue = dynamicPage + 1;
+                    if (currentPanel === "home") {
+                        idxHome = incrementedPageValue;
+                        executeFetchOperation(activeQuery, idxHome, 'homeStream', true);
+                    } else {
+                        idxRelated = incrementedPageValue;
+                        executeFetchOperation(activeQuery, idxRelated, 'recommendStream', true);
+                    }
+                    return;
+                }
+                lockScrollFetch = false;
+            } else {
+                if (!isAppendation) stream.innerHTML = `<div class="lux-state-msg">No videos found.</div>`;
+                lockScrollFetch = false;
+            }
+        } catch (exception) {
+            console.error(exception);
+            if (!isAppendation) stream.innerHTML = `<div class="lux-state-msg">Data alignment error.</div>`;
+            lockScrollFetch = false;
+        }
+    } 
+
+    function scaffoldCardNode(dataset, activeMarker) {
+        const elementWrapper = document.createElement('div');
+        elementWrapper.className = 'lux-card';
+        elementWrapper.onclick = () => activateBroadcastStream(dataset.embed, dataset.title, dataset.id); 
+
+        elementWrapper.innerHTML = `
+            <div class="lux-media">
+                <img src="${dataset.thumb}" alt="Media Cover">
+                <div class="share-lux-trigger" onclick="copyVideoLink(event, '${dataset.id}')">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>Share</span>
+                </div>
+                <div class="duration-lux-badge">${dataset.duration}</div>
+                <div class="fav-lux-trigger ${activeMarker ? 'active' : ''}" onclick="toggleCollectionState(event, ${JSON.stringify(dataset).replace(/"/g, '&quot;')})">
+                    <i class="${activeMarker ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+                </div>
+            </div>
+            <div class="lux-details">
+                <div class="lux-title">${dataset.title}</div>
+            </div>
+        `;
+        return elementWrapper;
+    }
+
+    function activateBroadcastStream(streamLink, metaLabel, videoId) {
+        activeVideoId = videoId;
+        window.location.hash = `video/${videoId}`;
+
+        navigateView('player');
+        document.getElementById('videoEmbedContainer').innerHTML = `
+            <iframe src="${streamLink}" allowfullscreen scrolling="no"></iframe>
+        `;
+        document.getElementById('videoActiveTitle').innerText = metaLabel; 
+        document.getElementById('playerShareBtn').onclick = (e) => copyVideoLink(e, videoId);
+
+        idxRelated = Math.floor(Math.random() * 5) + 6;
+        executeFetchOperation(activeQuery, idxRelated, 'recommendStream', false);
+    } 
+
+    function setupHeroBannerCarousel(items) {
+        bannerItems = items;
+        const track = document.getElementById('heroBannerTrack');
+        const dotsContainer = document.getElementById('bannerDotsContainer');
+        
+        if (!track || !items || items.length === 0) return;
+
+        track.innerHTML = "";
+        dotsContainer.innerHTML = "";
+        currentBannerIndex = 0;
+        if (bannerInterval) clearInterval(bannerInterval);
+
+        items.forEach((item, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'banner-slide';
+            slide.onclick = () => activateBroadcastStream(item.embed, item.title, item.id);
+            slide.innerHTML = `
+                <img src="${item.default_thumb.src}" alt="Hero Banner">
+                <div class="banner-overlay">
+                    <div class="banner-tag">Featured #${index + 1}</div>
+                    <div class="banner-title">${item.title}</div>
+                </div>
+            `;
+            track.appendChild(slide);
+
+            const dot = document.createElement('div');
+            dot.className = `dot-item ${index === 0 ? 'active' : ''}`;
+            dotsContainer.appendChild(dot);
+        });
+
+        bannerInterval = setInterval(() => {
+            currentBannerIndex = (currentBannerIndex + 1) % items.length;
+            track.style.transform = `translateX(-${currentBannerIndex * 100}%)`;
+            
+            const dots = dotsContainer.querySelectorAll('.dot-item');
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentBannerIndex));
+        }, 3500);
+    }
+</script> 
+
+<!-- Adsterra Social Bar Code -->
+<script src="https://pl31171673.profitableratecpmnetwork.com/b9/e4/7a/b9e47a9c8b987899bda6c7acedc25f7f.js"></script>
+
+</body>
+</html>
